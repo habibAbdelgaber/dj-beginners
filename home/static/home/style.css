@@ -1,0 +1,32 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+h1{
+    font-weight: 100;
+    padding: 1rem 0;
+}
+
+.post-title{
+    padding-top: 1rem;
+    text-transform: capitalize;
+    letter-spacing: .2rem;
+}
+
+.btn{
+    background: #0088cc;
+    padding: .6rem 1.5rem;
+    color: #fff;
+    border: 0;
+    border-radius: none;
+    margin-top: .5rem;
+}
