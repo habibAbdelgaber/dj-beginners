@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="form">
+            <h4 class='title'><a href="{% url 'post-update' post.id %}">{{ post.title }}</a></h4>
+            <span>{{post.date_created}}</span>
+            <span>Author: {{post.author }}</span>
+            <p>{{ post.content }}</p>
+            <!-- <a href="{% url 'delete-post' post.id %}" class='btn'>Delete post</a> -->
+            <div>
+                <a href="{{ post.get_absolute_url }}" class='btn btn-danger'>Delete post</a>
+                <a href="{{ post.get_absolute_update_url }}" class='btn btn-secondary'>Update post</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
