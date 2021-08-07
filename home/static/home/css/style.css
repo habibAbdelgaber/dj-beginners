@@ -1,0 +1,23 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 17px;
+    background-color: #fafafa;
+}
+
+.container{
+    padding: 1rem 0;
+    background-color: #fff;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+a{
+    text-decoration: none;
+}
+

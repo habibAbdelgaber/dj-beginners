@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog-Home</title>
-    <link rel="stylesheet" href="{% static './home/style.css' %}">
-</head>
-
-<body>
-    <h1 class='container'>Home Blog</h1>
-    <div class="container">
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        <h3 class='home-title'>Home Blog</h3>
         {% for post in posts %}
-        <h5 class="post-title">{{ post.title }}</h5>
-        <p>{{ post.content }}</p>
+        <span class="title"><a href="{{ post.get_absolute_detail_url }}">{{ post.title }}</a></span>
+        <br>
+        <span>{{ post.content }}</span>
         <p>Posted By: {{ post.author }}, On <small>{{post.date_created|date:"Y-m-d"}}</small></p>
         {% endfor %}
     </div>
-</body>
-
-</html>
+</div>
+{% endblock content %}

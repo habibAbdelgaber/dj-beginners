@@ -1,3 +1,4 @@
+from django.shortcuts import reverse
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -15,6 +16,15 @@ class Post(models.Model):
 
     def __str__(self):
         return f'{self.title}, {self.content}'
+
+    def get_absolute_detail_url(self):
+        return reverse('post-detail', args=[str(self.id)])
+
+    def get_absolute_update_url(self):
+        return reverse('post-update', args=[str(self.id)])
+
+    def get_absolute_url(self):
+        return reverse('delete-post', args=[str(self.id)])
 
 class Address(models.Model):
     pass
